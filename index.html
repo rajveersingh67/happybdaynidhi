@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Happy Birthday Nidhi! 🎀 A Magical Birthday Surprise ❤️</title>
+  <meta name="description" content="A cute, magical, handmade kawaii birthday surprise website created with all the love for Nidhi.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎀</text></svg>">
+  
+  <!-- Cute Kawaii Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Patrick+Hand&family=Caveat:wght@600;700&family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SPARKLE & HEART CURSOR TRAIL CONTAINER -->
+  <div id="cursor-trail-container"></div>
+
+  <!-- FLOATING HEARTS & PARTICLES BACKGROUND -->
+  <div id="ambient-particles" aria-hidden="true"></div>
+
+  <!-- ========================================================= -->
+  <!-- 2. OPENING SURPRISE SCREEN (FULLSCREEN MODAL ENTRANCE)    -->
+  <!-- ========================================================= -->
+  <div id="opening-screen" class="opening-screen active">
+    <div class="opening-clouds">
+      <div class="cloud cloud-1">☁️</div>
+      <div class="cloud cloud-2">☁️</div>
+      <div class="cloud cloud-3">🌸</div>
+      <div class="cloud cloud-4">✨</div>
+    </div>
+    
+    <div class="opening-content-card">
+      <div class="ribbon-bow-header">
+        <img src="assets/stickers/cute-bow.svg" alt="Pink Ribbon Bow" class="header-bow-sticker bounce-gentle">
+      </div>
+      
+      <div class="opening-badge">For Someone Truly Special 💌</div>
+      
+      <h1 class="opening-title">
+        A Little Birthday Surprise<br>
+        <span class="highlight-name">for Nidhi 🎀</span>
+      </h1>
+      
+      <div class="opening-doodle-trio">
+        <img src="assets/stickers/chubby-rose.svg" alt="Cute Chubby Doodle with Rose" class="opening-doodle doodle-left">
+        <img src="assets/stickers/chubby-party.svg" alt="Cute Chubby Doodle with Cake" class="opening-doodle doodle-center wobble-gentle">
+        <img src="assets/stickers/chubby-screaming-joy.svg" alt="Cute Chubby Screaming with Joy" class="opening-doodle doodle-right">
+      </div>
+      
+      <p class="opening-subtitle">
+        Packed with sweet memories, cute games, little giggles,<br>
+        and infinite love just for your birthday! ✨
+      </p>
+      
+      <div class="opening-btn-wrapper">
+        <button id="open-surprise-btn" class="glowing-surprise-btn pulse-glow">
+          <span class="btn-icon">🎁</span>
+          <span class="btn-text">Open Your Surprise ✨</span>
+          <span class="btn-sparkle">🎀</span>
+        </button>
+      </div>
+      
+      <div class="opening-floating-elements">
+        <span class="floating-icon f1">💖</span>
+        <span class="floating-icon f2">⭐</span>
+        <span class="floating-icon f3">🦋</span>
+        <span class="floating-icon f4">🌷</span>
+        <span class="floating-icon f5">🧁</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- FLOATING PERSISTENT NAVBAR & KAWAII MUSIC DOCK             -->
+  <!-- ========================================================= -->
+  <header class="floating-nav-dock">
+    <div class="dock-container">
+      
+      <!-- Brand Pill -->
+      <a href="#hero-section" class="dock-brand">
+        <span class="brand-heart">🎀</span>
+        <span class="brand-text">Nidhi's Day</span>
+      </a>
+      
+      <!-- Quick Navigation Links -->
+      <nav class="dock-nav" id="dock-nav">
+        <a href="#celebration-section" class="nav-item" title="Celebration">🎂 Celebrate</a>
+        <a href="#wish-section" class="nav-item" title="Make a Wish">🕯️ Wish</a>
+        <a href="#memories-section" class="nav-item" title="Memories">📸 Memories</a>
+        <a href="#letter-section" class="nav-item" title="Birthday Letter">💌 Letter</a>
+        <a href="#music-section" class="nav-item" title="Music Corner">🎧 Music</a>
+        <a href="#cake-section" class="nav-item" title="Interactive Cake">🧁 Cake</a>
+        <a href="#games-section" class="nav-item" title="Mini Games">🎮 Games</a>
+        <a href="#gifts-section" class="nav-item" title="Secret Gifts">🎁 Gifts</a>
+      </nav>
+      
+      <!-- Floating Mini Music Player Controls in Dock -->
+      <div class="dock-music-widget" id="dock-music-widget">
+        <div class="mini-disc-wrapper" id="mini-disc">
+          <div class="mini-disc-vinyl">
+            <span class="disc-label">🌸</span>
+          </div>
+        </div>
+        <div class="mini-track-info">
+          <span class="track-title" id="dock-track-title">Song for Nidhi 🎵</span>
+          <div class="mini-time-text" id="dock-time-text">0:00 / 0:11</div>
+        </div>
+        <button id="dock-play-btn" class="dock-btn play-toggle-btn" aria-label="Play or Pause Song">
+          <span id="dock-play-icon">▶️</span>
+        </button>
+      </div>
+      
+      <!-- Sound FX Mute & Heart Shower Actions -->
+      <div class="dock-actions">
+        <button id="sfx-toggle-btn" class="dock-action-btn" title="Toggle Sound FX">
+          <span id="sfx-icon">🔊</span>
+        </button>
+        <button id="shower-hearts-btn" class="dock-action-btn heart-btn" title="Send Love & Confetti!">
+          <span>💖</span>
+        </button>
+      </div>
+      
+    </div>
+  </header>
+
+  <!-- MAIN SCROLLABLE CONTENT WRAPPER -->
+  <main id="main-content" class="main-wrapper">
+
+    <!-- HERO SCRAPBOOK BANNER -->
+    <section id="hero-section" class="scrapbook-section hero-banner-section">
+      <div class="bunting-garland" aria-hidden="true">
+        <span class="flag f-pink">★</span>
+        <span class="flag f-yellow">♥</span>
+        <span class="flag f-blue">★</span>
+        <span class="flag f-purple">♥</span>
+        <span class="flag f-pink">★</span>
+        <span class="flag f-yellow">♥</span>
+        <span class="flag f-green">★</span>
+        <span class="flag f-pink">♥</span>
+      </div>
+
+      <div class="hero-scrapbook-card tape-corners">
+        <div class="washi-tape top-tape"></div>
+        <div class="hero-character-floaters">
+          <img src="assets/stickers/cute-cat.svg" alt="Cute Tabby Kitten" class="hero-sticker cat-sticker bounce-gentle">
+          <img src="assets/stickers/kawaii-cake-candles.svg" alt="Kawaii Birthday Cake" class="hero-sticker cake-sticker float-gentle">
+        </div>
+
+        <div class="hero-pre-badge">
+          <span>✨ November 12 • The Most Wonderful Day of the Year ✨</span>
+        </div>
+
+        <h1 class="hero-heading handwritten-style">
+          Happy Birthday, Sweet Nidhi! 💖
+        </h1>
+
+        <p class="hero-description">
+          Welcome to your handmade birthday scrapbook! Every single doodle, song, game, and word on this page was made with infinite love, smiles, and magic to celebrate the most amazing girl ever.
+        </p>
+
+        <div class="hero-interactive-pills">
+          <button class="cute-pill-btn" onclick="triggerConfettiShower()">🎉 Toss Confetti</button>
+          <button class="cute-pill-btn" onclick="sendHeartBlast()">💕 Shower Hearts</button>
+          <a href="#celebration-section" class="cute-pill-btn primary-pill">Let's Celebrate! 🌸</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 3. MAIN BIRTHDAY CELEBRATION (VIDEO 3: birthday-drawing)  -->
+    <!-- ========================================================= -->
+    <section id="celebration-section" class="scrapbook-section celebration-section">
+      <div class="section-badge-wrapper">
+        <span class="cute-badge">✨ Section 01 • Main Event ✨</span>
+      </div>
+      
+      <h2 class="section-title handwritten-style">
+        HAPPY BIRTHDAY, MY NIDHIII!! 🎂
+      </h2>
+      
+      <p class="section-subtitle">
+        Two cute cartoon buddies celebrating with you right now! Let's party! 🥳
+      </p>
+
+      <!-- NIDHI'S MAIN PHOTO HIGHLIGHT: BIRTHDAY QUEEN SPOTLIGHT -->
+      <div class="birthday-girl-spotlight-card polaroid-shadow">
+        <div class="washi-tape top-center-tape"></div>
+        <img src="assets/stickers/cute-bow.svg" alt="Pink Ribbon Bow" class="spotlight-bow bounce-gentle">
+        <div class="spotlight-badge">👑 Today's Birthday Queen • Nidhi 👑</div>
+        
+        <div class="spotlight-photo-frame" onclick="openLightbox('assets/images/nidhi-main-portrait.jpg', 'Today\'s Birthday Queen: My Beautiful Nidhi 👑🌷')">
+          <img src="assets/images/nidhi-main-portrait.jpg" alt="Beautiful Portrait of Nidhi" class="spotlight-img">
+          <div class="spotlight-sparkles tl">✨</div>
+          <div class="spotlight-sparkles tr">🌸</div>
+          <div class="spotlight-sparkles bl">💕</div>
+          <div class="spotlight-sparkles br">⭐</div>
+        </div>
+
+        <div class="spotlight-caption">
+          <h3 class="handwritten-style spotlight-title">The Sweetest Smile in the Universe 🌸</h3>
+          <p class="spotlight-subtitle">Every flower in the garden is jealous of your radiant glow today, my love! 🌷✨</p>
+        </div>
+      </div>
+
+
+      <div class="celebration-grid">
+        
+        <!-- Video 3 Player Card -->
+        <div class="scrapbook-video-card polaroid-shadow">
+          <div class="washi-tape left-tilt"></div>
+          <div class="washi-tape right-tilt"></div>
+          
+          <div class="video-frame-inner">
+            <video id="video-birthday-drawing" class="main-featured-video" playsinline loop controls poster="assets/images/doodle-solo-cake.jpg">
+              <source src="assets/videos/birthday-drawing.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          
+          <div class="video-polaroid-caption">
+            <p class="handwritten-caption">
+              “Singing and dancing at the top of our lungs for Nidhi!” 🎶✨
+            </p>
+            <div class="caption-stickers">
+              <span class="mini-doodle">🎉</span>
+              <span class="mini-doodle">🍰</span>
+              <span class="mini-doodle">💖</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Celebratory Greeting & Cheer Card -->
+        <div class="celebration-message-card notebook-paper">
+          <div class="pushpin-sticker">📌</div>
+          
+          <div class="card-inner-header">
+            <img src="assets/stickers/chubby-screaming-joy.svg" alt="Joy Doodle" class="greeting-avatar">
+            <div>
+              <h3 class="greeting-name">To My Favorite Girl, Nidhi ❤️</h3>
+              <span class="greeting-tag">Queen of Smiles 👑</span>
+            </div>
+          </div>
+          
+          <div class="greeting-body">
+            <p>
+              Happy Birthday, my sweet Nidhi! Today is all about celebrating <strong>YOU</strong>—your contagious giggles, your beautiful heart, the pure warmth you bring to every single day, and the effortless way you make the world so much softer and brighter.
+            </p>
+            <p>
+              I hope this year showers you with every dream you’ve been secretly wishing for, endless bowls of delicious food, zero worries, and a million happy moments that make your cheeks hurt from smiling! 🌸
+            </p>
+          </div>
+
+          <div class="interactive-cheer-box">
+            <div class="cheer-label">Send Birthday Cheer to Nidhi:</div>
+            <div class="cheer-buttons-row">
+              <button class="cheer-btn" data-cheer="hug">
+                <span class="cheer-emoji">🤗</span>
+                <span class="cheer-title">Big Warm Hug</span>
+                <span class="cheer-count" id="count-hug">142</span>
+              </button>
+              <button class="cheer-btn" data-cheer="kisses">
+                <span class="cheer-emoji">😘</span>
+                <span class="cheer-title">Sweet Kisses</span>
+                <span class="cheer-count" id="count-kisses">289</span>
+              </button>
+              <button class="cheer-btn" data-cheer="love">
+                <span class="cheer-emoji">💖</span>
+                <span class="cheer-title">Love x Infinity</span>
+                <span class="cheer-count" id="count-love">999+</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 4. MAKE A WISH SECTION (VIDEO 1: candle.mp4)             -->
+    <!-- ========================================================= -->
+    <section id="wish-section" class="scrapbook-section wish-section">
+      <div class="section-badge-wrapper">
+        <span class="cute-badge badge-lavender">✨ Section 02 • Starlight Magic ✨</span>
+      </div>
+
+      <h2 class="section-title handwritten-style">
+        Close Your Eyes & Make a Wish ✨
+      </h2>
+
+      <p class="section-subtitle">
+        Take a deep breath, think of the sweetest wish in your heart, and watch the candle glow...
+      </p>
+
+      <div class="wish-container">
+        
+        <!-- Video 1 in Dreamy Frame -->
+        <div class="dreamy-candle-card glow-border">
+          <div class="starlight-decor tl">⭐</div>
+          <div class="starlight-decor tr">✨</div>
+          <div class="starlight-decor bl">🌙</div>
+          <div class="starlight-decor br">💫</div>
+
+          <div class="candle-video-wrapper">
+            <video id="video-candle" class="candle-video" playsinline loop controls poster="assets/images/doodle-solo-cake.jpg">
+              <source src="assets/videos/candle.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="wish-video-caption">
+            <p class="handwritten-caption">
+              🕯️ “Whisper your wish to the universe, Nidhi...” 🌟
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Wish Capsule -->
+        <div class="wish-capsule-card notebook-paper">
+          <div class="capsule-header">
+            <span class="capsule-icon">💌</span>
+            <h3>Nidhi's Secret Birthday Wish Box</h3>
+          </div>
+
+          <p class="capsule-instructions">
+            Type your secret birthday wish below (or leave it blank if you want it kept between you and the stars), then press <em>Send to the Stars</em>!
+          </p>
+
+          <div class="wish-input-wrapper">
+            <input type="text" id="secret-wish-input" placeholder="Type a dream or sweet wish here... 🌸" maxlength="120" autocomplete="off">
+            <button id="send-wish-btn" class="wish-send-btn">
+              <span>Send to the Stars ✨</span>
+            </button>
+          </div>
+
+          <!-- Stored Wish Reveal Message -->
+          <div id="wish-sent-alert" class="wish-sent-alert hidden">
+            <div class="alert-sparkles">✨🌟💫</div>
+            <h4>Your wish is flying towards the brightest star! 🚀💖</h4>
+            <p id="displayed-wish-text">“May everything wonderful happen for Nidhi!”</p>
+            <p class="wish-blessing">
+              Nidhi, you deserve every star in the sky, every blossom in the spring, and a lifetime filled with peace, safety, boundless love, and joy. It will all come true! 🌸
+            </p>
+          </div>
+
+          <!-- Magical Wish Blessing Quote -->
+          <div class="magical-blessing-quote">
+            <p>
+              “In a universe full of wonders, the most magical thing that ever happened is having you in my life. Happy Birthday, Nidhi!” 💖
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 5. CUTE MEMORIES & CAMERA SECTION (VIDEO 2: cat-camera)  -->
+    <!-- ========================================================= -->
+    <section id="memories-section" class="scrapbook-section memories-section">
+      <div class="section-badge-wrapper">
+        <span class="cute-badge badge-peach">✨ Section 03 • Photo Album ✨</span>
+      </div>
+
+      <h2 class="section-title handwritten-style">
+        Every Little Moment is Special 💗
+      </h2>
+
+      <p class="section-subtitle">
+        Captured in doodles, giggles, and sweet memories of us!
+      </p>
+
+      <!-- Video 2: Cat Camera Interactive Spotlight -->
+      <div class="cat-camera-spotlight-card">
+        <div class="camera-body-frame">
+          <div class="camera-lens-cutout">
+            <video id="video-cat-camera" class="camera-cat-video" playsinline loop controls poster="assets/images/cat-flowers-cake.jpg">
+              <source src="assets/videos/cat-camera.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="camera-flash-indicator" id="camera-flash-indicator">
+            <span class="flash-icon">📸</span>
+            <span class="flash-text">Say Cheese, Nidhi! Click to Snap!</span>
+          </div>
+        </div>
+        <p class="camera-caption handwritten-style">
+          Look at this cute little photographer capturing your special birthday day! 🐾✨
+        </p>
+      </div>
+
+      <!-- Polaroid Scrapbook Photo Grid -->
+      <div class="scrapbook-polaroid-gallery">
+        
+        <!-- Polaroid 1: Uploaded Trio Celebration -->
+        <div class="polaroid-item tilt-left" onclick="openLightbox('assets/images/doodle-trio-celebration.jpg', 'When We Celebrate Together 🎉 - Pure Chaos & Maximum Joy!')">
+          <div class="washi-tape top-tape"></div>
+          <div class="polaroid-photo-wrapper">
+            <img src="assets/images/doodle-trio-celebration.jpg" alt="Doodle Trio Celebration" loading="lazy">
+          </div>
+          <p class="polaroid-text">The Birthday Trio! 🥳 Singing, cheering & eating cake!</p>
+        </div>
+
+        <!-- Polaroid 2: Uploaded Cat Flowers & Cake -->
+        <div class="polaroid-item tilt-right" onclick="openLightbox('assets/images/cat-flowers-cake.jpg', 'Delivering endless love, tulips & sweetness to you 🌷🎂')">
+          <div class="washi-tape top-tape"></div>
+          <div class="polaroid-photo-wrapper">
+            <img src="assets/images/cat-flowers-cake.jpg" alt="Cute Kitten with Tulips and Cake" loading="lazy">
+          </div>
+          <p class="polaroid-text">A special bouquet of pink tulips & cake for my girl 🌷</p>
+        </div>
+
+        <!-- Polaroid 3: Uploaded Solo Cake Ghost -->
+        <div class="polaroid-item tilt-left-small" onclick="openLightbox('assets/images/doodle-solo-cake.jpg', 'The Sweetest Birthday Cutie 🍰')">
+          <div class="washi-tape top-tape"></div>
+          <div class="polaroid-photo-wrapper">
+            <img src="assets/images/doodle-solo-cake.jpg" alt="Doodle Chubby Creature with Birthday Cake" loading="lazy">
+          </div>
+          <p class="polaroid-text">All 5 candles are burning just for you! 🕯️✨</p>
+        </div>
+
+        <!-- Polaroid 4: Uploaded Dancing Cats Meme -->
+        <div class="polaroid-item tilt-right-small" onclick="openLightbox('assets/images/cat-dance-meme.jpg', 'Dancing Through Life Together 💃🕺')">
+          <div class="washi-tape top-tape"></div>
+          <div class="polaroid-photo-wrapper">
+            <img src="assets/images/cat-dance-meme.jpg" alt="Dancing Cats Happy Birthday Meme" loading="lazy">
+          </div>
+          <p class="polaroid-text">Us dancing together on your special day! 🎶👯‍♀️</p>
+        </div>
+
+        <!-- Polaroid 5: Nidhi's Sweet Smile Memory -->
+        <div class="polaroid-item tilt-left" onclick="openLightbox('assets/images/nidhi-sweet-smile.jpg', 'That Radiant Smile That Melts My Heart Every Time 🌷✨')">
+          <div class="washi-tape top-tape"></div>
+          <div class="polaroid-photo-wrapper">
+            <img src="assets/images/nidhi-sweet-smile.jpg" alt="Nidhi's Sweet Smile" loading="lazy">
+          </div>
+          <p class="polaroid-text">That radiant smile that melts my heart every single time! 🌷✨</p>
+        </div>
+
+        <!-- Polaroid 6: Illustrated Memory Story Card -->
+        <div class="polaroid-item tilt-right illustrated-polaroid" onclick="openLightbox('assets/stickers/chubby-party.svg', 'Looking forward to 10,000 more adventures with you! 🗺️')">
+          <div class="washi-tape top-tape"></div>
+          <div class="polaroid-photo-wrapper doodle-art-bg">
+            <img src="assets/stickers/chubby-party.svg" alt="Party Doodle" class="gallery-doodle-img">
+          </div>
+          <p class="polaroid-text">To a million more birthdays together, hand in hand 🌸</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- LIGHTBOX MODAL FOR MEMORIES -->
+    <div id="memory-lightbox" class="lightbox-modal" onclick="closeLightbox()">
+      <div class="lightbox-content" onclick="event.stopPropagation()">
+        <button class="lightbox-close-btn" onclick="closeLightbox()">✖</button>
+        <img id="lightbox-image" src="" alt="Enlarged Memory">
+        <p id="lightbox-caption" class="lightbox-caption handwritten-style"></p>
+      </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- 6. A SPECIAL BIRTHDAY LETTER (INTERACTIVE ENVELOPE)       -->
+    <!-- ========================================================= -->
+    <section id="letter-section" class="scrapbook-section letter-section">
+      <div class="section-badge-wrapper">
+        <span class="cute-badge badge-pink">✨ Section 04 • From the Heart ✨</span>
+      </div>
+
+      <h2 class="section-title handwritten-style">
+        A Little Letter Just For You, Nidhi 💌
+      </h2>
+
+      <p class="section-subtitle">
+        Tap the envelope below to break the wax seal and open your personal birthday letter...
+      </p>
+
+      <div class="envelope-interactive-area">
+        
+        <!-- ENVELOPE WRAPPER -->
+        <div id="birthday-envelope" class="envelope-wrapper closed" onclick="toggleEnvelope()">
+          <div class="envelope-front">
+            <div class="envelope-flap" id="envelope-flap"></div>
+            <div class="envelope-pocket"></div>
+            <div class="envelope-wax-seal pulse-gentle" id="wax-seal">
+              <span class="seal-heart">❤️</span>
+              <span class="seal-tooltip">Tap to Open! 🎀</span>
+            </div>
+            <div class="envelope-address">
+              <span class="to-label">Special Delivery For:</span>
+              <span class="recipient-name handwritten-style">My Dearest Nidhi 🌷</span>
+              <span class="stamp-sticker">🐾 STAMP</span>
+            </div>
+          </div>
+
+          <!-- THE UNFOLDING LETTER -->
+          <div class="letter-paper" id="letter-paper">
+            <div class="letter-decor tl">🌸</div>
+            <div class="letter-decor tr">✨</div>
+            <div class="letter-decor bl">🎀</div>
+            <div class="letter-decor br">💕</div>
+
+            <!-- Tucked Keepsake Photo of Nidhi -->
+            <div class="letter-photo-keepsake tilt-right-small" onclick="openLightbox('assets/images/nidhi-candid-glow.jpg', 'My Sweet Nidhi - Forever Cherished In My Heart 💖')">
+              <div class="washi-tape letter-tape"></div>
+              <div class="keepsake-img-box">
+                <img src="assets/images/nidhi-candid-glow.jpg" alt="Nidhi Candid Keepsake" class="keepsake-photo">
+              </div>
+              <p class="keepsake-caption">Forever keeping this smile in my heart ❤️</p>
+            </div>
+
+            <div class="letter-header">
+              <span class="letter-date">November 12th • On Your Beautiful Birthday</span>
+              <h3 class="letter-greeting handwritten-style">Dearest Nidhi,</h3>
+            </div>
+
+            <div class="letter-content-text" id="typed-letter-body">
+              <p>
+                Happy Birthday to the most extraordinary, adorable, and sweet person in my life! ❤️
+              </p>
+              <p>
+                From the moment you entered my world, everything became a little softer, so much brighter, and infinitely more joyful. You have this rare, effortless magic about you—the kind where a single text or your sweet laugh can turn around my hardest day into pure comfort.
+              </p>
+              <p>
+                I want you to know how deeply I cherish who you are. I love your kindness, your silly jokes, your little cute expressions, your strength, and the endless care you show. Being by your side and watching you shine is one of my greatest blessings.
+              </p>
+              <p>
+                Today, on your birthday, my biggest wish is for your happiness. I hope this year wraps you in peace, surrounds you with warmth, gives you exciting new adventures, and grants every secret dream you hold in your heart. You deserve every ounce of goodness the universe has to offer, and so much more.
+              </p>
+              <p>
+                Thank you for being my favorite companion, my biggest comfort, and the sweetest part of every day. I hope this birthday becomes one of your favorite memories ever.
+              </p>
+              <p class="letter-signoff handwritten-style">
+                Forever cheering for you & loving you x infinity,<br>
+                <span class="signature-name">Always Yours ❤️🎀</span>
+              </p>
+            </div>
+
+            <div class="letter-actions">
+              <button class="cute-pill-btn" onclick="toggleTypewriterSpeed(event)">✨ Replay Letter Typing</button>
+              <button class="cute-pill-btn primary-pill" onclick="closeEnvelope(event)">Fold Letter Back 💌</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 7. MY CUSTOM SONG – MUSIC CORNER (AUDIO PLAYER)          -->
+    <!-- ========================================================= -->
+    <section id="music-section" class="scrapbook-section music-section">
+      <div class="section-badge-wrapper">
+        <span class="cute-badge badge-blue">✨ Section 05 • Music Corner ✨</span>
+      </div>
+
+      <h2 class="section-title handwritten-style">
+        My Custom Song – Music Corner 🎧
+      </h2>
+
+      <p class="section-subtitle">
+        A special melody playing just for you. Put on your headphones and let the music play! 🎶
+      </p>
+
+      <div class="vinyl-player-card polaroid-shadow">
+        
+        <!-- Tonearm & Turntable Art -->
+        <div class="turntable-body">
+          
+          <div class="vinyl-record-container" id="vinyl-record">
+            <div class="vinyl-grooves"></div>
+            <div class="vinyl-center-label">
+              <img src="assets/stickers/cute-cat.svg" alt="Music Cat" class="vinyl-center-sticker">
+              <span class="vinyl-center-text">Nidhi's Song 💖</span>
+            </div>
+          </div>
+
+          <div class="turntable-tonearm" id="turntable-tonearm">
+            <div class="tonearm-pivot"></div>
+            <div class="tonearm-bar"></div>
+            <div class="tonearm-head"></div>
+          </div>
+
+          <!-- Floating Note Particles (active when playing) -->
+          <div class="music-floating-notes" id="music-floating-notes" aria-hidden="true">
+            <span class="note n1">♪</span>
+            <span class="note n2">♫</span>
+            <span class="note n3">♬</span>
+            <span class="note n4">♩</span>
+            <span class="note n5">💖</span>
+          </div>
+
+        </div>
+
+        <!-- Full Audio Control Dashboard -->
+        <div class="music-dashboard">
+          
+          <div class="track-meta">
+            <div class="track-badge">Now Playing 🎵</div>
+            <h3 class="track-title-large">A Special Birthday Melody For Nidhi</h3>
+            <p class="track-artist">Dedicated to the Birthday Girl • Custom Song</p>
+          </div>
+
+          <!-- Equalizer Animated Visualizer -->
+          <div class="equalizer-bars" id="equalizer-bars">
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+          </div>
+
+          <!-- Progress Bar & Time -->
+          <div class="progress-container">
+            <span id="current-time" class="time-label">0:00</span>
+            <div class="progress-bar-wrapper" id="progress-bar-wrapper">
+              <div class="progress-bar-fill" id="progress-bar-fill"></div>
+              <div class="progress-scrubber" id="progress-scrubber"></div>
+            </div>
+            <span id="total-duration" class="time-label">0:11</span>
+          </div>
+
+          <!-- Playback Controls -->
+          <div class="player-controls-row">
+            <button id="btn-rewind" class="ctrl-btn secondary-ctrl" title="Restart Song">⏮️</button>
+            <button id="btn-main-play" class="ctrl-btn main-play-btn" title="Play / Pause">
+              <span id="main-play-icon">▶️</span>
+            </button>
+            <button id="btn-loop" class="ctrl-btn secondary-ctrl active" title="Toggle Loop Mode">🔁</button>
+          </div>
+
+          <!-- Volume Controls -->
+          <div class="volume-control-wrapper">
+            <span class="volume-icon" id="volume-icon-indicator">🔊</span>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.85">
+            <span id="volume-percent" class="volume-label">85%</span>
+          </div>
+
+          <!-- Actual HTML5 Audio Element -->
+          <audio id="birthday-audio" preload="metadata" loop>
+            <source src="assets/audio/birthday-song.mp3" type="audio/mpeg">
+            Your browser does not support audio playback.
+          </audio>
+
+          <p class="music-note-disclaimer">
+            💡 <em>Click the play button to start listening. Designed to play seamlessly throughout your visit!</em>
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 9. ANIMATED BIRTHDAY CAKE INTERACTION                     -->
+    <!-- ========================================================= -->
+    <section id="cake-section" class="scrapbook-section cake-section">
+      <div class="section-badge-wrapper">
+        <span class="cute-badge badge-yellow">✨ Section 06 • Interactive Cake ✨</span>
+      </div>
+
+      <h2 class="section-title handwritten-style">
+        Blow Out the Birthday Candles! 🧁
+      </h2>
+
+      <p class="section-subtitle">
+        Tap the button to blow out your candles and reveal your secret surprise!
+      </p>
+
+      <div class="cake-interactive-stage">
+        
+        <div class="cake-display-wrapper" id="cake-display">
+          
+          <!-- Candles Row -->
+          <div class="candles-row" id="candles-row">
+            
+            <div class="candle-item c1" data-candle="1">
+              <div class="candle-flame">
+                <div class="flame-inner"></div>
+              </div>
+              <div class="smoke-puff">💨</div>
+              <div class="candle-stick stripe-pink"></div>
+            </div>
+
+            <div class="candle-item c2" data-candle="2">
+              <div class="candle-flame">
+                <div class="flame-inner"></div>
+              </div>
+              <div class="smoke-puff">💨</div>
+              <div class="candle-stick stripe-blue"></div>
+            </div>
+
+            <div class="candle-item c3" data-candle="3">
+              <div class="candle-flame">
+                <div class="flame-inner"></div>
+              </div>
+              <div class="smoke-puff">💨</div>
+              <div class="candle-stick stripe-yellow"></div>
+            </div>
+
+            <div class="candle-item c4" data-candle="4">
+              <div class="candle-flame">
+                <div class="flame-inner"></div>
+              </div>
+              <div class="smoke-puff">💨</div>
+              <div class="candle-stick stripe-purple"></div>
+            </div>
+
+            <div class="candle-item c5" data-candle="5">
+              <div class="candle-flame">
+                <div class="flame-inner"></div>
+              </div>
+              <div class="smoke-puff">💨</div>
+              <div class="candle-stick stripe-green"></div>
+            </div>
+
+          </div>
+
+          <!-- Multi-tier Kawaii Cake Graphic -->
+          <div class="drawn-cake-body">
+            <!-- Top Layer -->
+            <div class="cake-tier tier-top">
+              <div class="tier-frosting">
+                <span class="strawberry-top">🍓</span>
+                <span class="strawberry-top">🍓</span>
+                <span class="strawberry-top">🍓</span>
+              </div>
+              <div class="tier-sponge"></div>
+            </div>
+
+            <!-- Middle Layer -->
+            <div class="cake-tier tier-middle">
+              <div class="tier-frosting wavy-frosting"></div>
+              <div class="tier-sponge sprinkles-pattern">
+                <span class="cake-greeting-text">NIDHI</span>
+              </div>
+            </div>
+
+            <!-- Base Layer -->
+            <div class="cake-tier tier-base">
+              <div class="tier-frosting scallop-frosting"></div>
+              <div class="tier-sponge"></div>
+            </div>
+
+            <!-- Plate -->
+            <div class="cake-plate"></div>
+          </div>
+
+        </div>
+
+        <!-- Blow / Relight Interactive Controls -->
+        <div class="cake-controls">
+          <button id="blow-candles-btn" class="glowing-surprise-btn cake-btn" onclick="blowCandles()">
+            <span>🎂 Blow Out the Candles! 💨</span>
+          </button>
+          <button id="relight-candles-btn" class="cute-pill-btn hidden" onclick="relightCandles()">
+            <span>🕯️ Relight the Candles</span>
+          </button>
+        </div>
+
+        <!-- Hidden Wish Reveal Message Under Cake -->
+        <div id="cake-wish-reveal" class="cake-reveal-card hidden">
+          <div class="reveal-badge">🎉 WISH GRANTED! 🎉</div>
+          <h3 class="handwritten-style">YAYYY! Happy Birthday Nidhi! 💖</h3>
+          <p>
+            Your candles are blown, the smoke carried your wishes to the highest stars, and today is officially blessed with 365 days of good luck, health, giggles, and love!
+          </p>
+          <div class="reveal-stickers">
+            <span>🍰</span><span>✨</span><span>🧸</span><span>🌷</span><span>🌸</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 8. INTERACTIVE BIRTHDAY GAMES (5 COMPLETE MINI-GAMES)      -->
+    <!-- ========================================================= -->
+    <section id="games-section" class="scrapbook-section games-section">
+      <div class="section-badge-wrapper">
+        <span class="cute-badge badge-green">✨ Section 07 • Birthday Arcade ✨</span>
+      </div>
+
+      <h2 class="section-title handwritten-style">
+        Interactive Birthday Mini-Games 🎮
+      </h2>
+
+      <p class="section-subtitle">
+        Five fun kawaii games created exclusively for your birthday. Play and win sweet surprises!
+      </p>
+
+      <!-- Games Tab Selector Bar -->
+      <div class="game-tabs-nav" role="tablist">
+        <button class="game-tab-btn active" onclick="switchGame('game-hearts')" id="tab-game-hearts">
+          ❤️ 1. Catch Hearts
+        </button>
+        <button class="game-tab-btn" onclick="switchGame('game-balloons')" id="tab-game-balloons">
+          🎈 2. Pop Balloons
+        </button>
+        <button class="game-tab-btn" onclick="switchGame('game-quiz')" id="tab-game-quiz">
+          💗 3. Nidhi Quiz
+        </button>
+        <button class="game-tab-btn" onclick="switchGame('game-scratch')" id="tab-game-scratch">
+          🎁 4. Scratch Card
+        </button>
+        <button class="game-tab-btn" onclick="switchGame('game-memory')" id="tab-game-memory">
+          🧸 5. Memory Match
+        </button>
+      </div>
+
+      <!-- GAME CONTAINERS -->
+      <div class="games-viewport">
+
+        <!-- ----------------------------------------------------- -->
+        <!-- GAME 1: CATCH THE HEARTS ❤️                           -->
+        <!-- ----------------------------------------------------- -->
+        <div id="game-hearts" class="game-card-panel active">
+          <div class="game-panel-header">
+            <div>
+              <h3 class="game-title">Game 1: Catch the Hearts ❤️</h3>
+              <p class="game-desc">Move the basket left & right (or swipe) to catch falling hearts, strawberries, and cupcakes!</p>
+            </div>
+            <div class="game-stats-pill">
+              <span>Score: <strong id="hearts-score">0</strong></span>
+              <span>Time: <strong id="hearts-timer">30s</strong></span>
+            </div>
+          </div>
+
+          <div class="game-canvas-wrapper">
+            <canvas id="hearts-canvas" width="500" height="380"></canvas>
+            <div id="hearts-overlay" class="game-overlay-screen">
+              <div class="overlay-modal">
+                <img src="assets/stickers/chubby-party.svg" alt="Party Character" class="modal-doodle">
+                <h4 id="hearts-modal-title">Ready to Catch Love? 💖</h4>
+                <p id="hearts-modal-desc">Catch sweet treats and avoid empty spaces! Let's see how high you can score!</p>
+                <button class="cute-pill-btn primary-pill" onclick="startHeartsGame()">🎮 Start Game</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Touch Controls for Heart Game -->
+          <div class="mobile-touch-controls">
+            <button class="touch-ctrl-btn" id="btn-move-left">◀️ Move Left</button>
+            <button class="touch-ctrl-btn" id="btn-move-right">Move Right ▶️</button>
+          </div>
+        </div>
+
+        <!-- ----------------------------------------------------- -->
+        <!-- GAME 2: POP THE BALLOONS 🎈                           -->
+        <!-- ----------------------------------------------------- -->
+        <div id="game-balloons" class="game-card-panel">
+          <div class="game-panel-header">
+            <div>
+              <h3 class="game-title">Game 2: Pop the Balloons 🎈</h3>
+              <p class="game-desc">Tap or click the floating balloons to pop them and unlock sweet birthday secrets!</p>
+            </div>
+            <div class="game-stats-pill">
+              <span>Balloons Popped: <strong id="balloons-popped-count">0</strong> / 10</span>
+            </div>
+          </div>
+
+          <div class="balloons-arena" id="balloons-arena">
+            <!-- Balloons generated dynamically by JS -->
+          </div>
+
+          <div class="balloon-secret-box" id="balloon-secret-box">
+            <span class="secret-icon">💌</span>
+            <span class="secret-text" id="balloon-secret-text">Tap any balloon above to reveal a sweet message!</span>
+          </div>
+
+          <div class="game-actions-bar">
+            <button class="cute-pill-btn" onclick="spawnBalloonsWave()">🎈 Release More Balloons</button>
+          </div>
+        </div>
+
+        <!-- ----------------------------------------------------- -->
+        <!-- GAME 3: HOW WELL DO YOU KNOW ME? (QUIZ) 💗           -->
+        <!-- ----------------------------------------------------- -->
+        <div id="game-quiz" class="game-card-panel">
+          <div class="game-panel-header">
+            <div>
+              <h3 class="game-title">Game 3: The Nidhi & Us Quiz 💗</h3>
+              <p class="game-desc">Answer these cute questions to unlock your Official Soulmate Certificate!</p>
+            </div>
+            <div class="game-stats-pill">
+              <span>Question <strong id="quiz-progress">1</strong> of 5</span>
+            </div>
+          </div>
+
+          <div class="quiz-container-card" id="quiz-container">
+            <div class="quiz-question-box">
+              <span class="quiz-question-icon">❓</span>
+              <h4 id="quiz-question-text" class="handwritten-style">What is my absolute favorite thing about Nidhi?</h4>
+            </div>
+
+            <div class="quiz-options-grid" id="quiz-options-grid">
+              <!-- Rendered via JS -->
+            </div>
+
+            <div id="quiz-feedback-box" class="quiz-feedback hidden">
+              <!-- Feedback message -->
+            </div>
+          </div>
+
+          <!-- Final Certificate Screen (Hidden until finished) -->
+          <div id="quiz-result-card" class="quiz-result-card hidden">
+            <div class="certificate-frame">
+              <div class="cert-ribbon">🏆 OFFICIAL AWARD 🏆</div>
+              <h3 class="handwritten-style">1000% Certified Soulmate! 💖</h3>
+              <p class="cert-body">
+                Presented to <strong>Nidhi</strong>, the world's most adorable girlfriend! Your humor, warmth, and sweetness make every day feel like a celebration.
+              </p>
+              <div class="cert-badge">👑 OFFICIAL BIRTHDAY QUEEN</div>
+              <button class="cute-pill-btn primary-pill" onclick="restartQuiz()">🔄 Retake Quiz</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ----------------------------------------------------- -->
+        <!-- GAME 4: SCRATCH TO REVEAL 🎁                          -->
+        <!-- ----------------------------------------------------- -->
+        <div id="game-scratch" class="game-card-panel">
+          <div class="game-panel-header">
+            <div>
+              <h3 class="game-title">Game 4: Scratch to Reveal 🎁</h3>
+              <p class="game-desc">Use your finger or mouse to scratch away the silver glitter and uncover the golden surprise!</p>
+            </div>
+            <div class="game-stats-pill">
+              <span>Scratched: <strong id="scratch-percent">0%</strong></span>
+            </div>
+          </div>
+
+          <div class="scratch-card-wrapper">
+            
+            <!-- Hidden Secret Layer Underneath -->
+            <div class="scratch-hidden-content" id="scratch-hidden-content">
+              <div class="scratch-golden-ticket">
+                <div class="ticket-stars">⭐ 🎟️ ⭐</div>
+                <h4 class="handwritten-style">GOLDEN BIRTHDAY COUPON</h4>
+                <p class="ticket-reward">
+                  🎉 Good For: <strong>Unlimited Hugs, 1000 Forehead Kisses, Midnight Ice Cream & Anything Your Heart Desires!</strong>
+                </p>
+                <div class="ticket-footer">
+                  <span>Issued with infinite love ❤️</span>
+                  <span>Expires: NEVER</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Scratchable Canvas Layer on Top -->
+            <canvas id="scratch-canvas" width="460" height="280"></canvas>
+
+          </div>
+
+          <div class="game-actions-bar">
+            <button class="cute-pill-btn" onclick="initScratchCard()">✨ Reset & Scratch Again</button>
+          </div>
+        </div>
+
+        <!-- ----------------------------------------------------- -->
+        <!-- GAME 5: MEMORY MATCH GAME 🧸                          -->
+        <!-- ----------------------------------------------------- -->
+        <div id="game-memory" class="game-card-panel">
+          <div class="game-panel-header">
+            <div>
+              <h3 class="game-title">Game 5: Kawaii Memory Match 🧸</h3>
+              <p class="game-desc">Flip the cute cards to find all 6 matching pairs of hand-drawn birthday items!</p>
+            </div>
+            <div class="game-stats-pill">
+              <span>Moves: <strong id="memory-moves">0</strong></span>
+              <span>Matched: <strong id="memory-matched">0</strong> / 6</span>
+            </div>
+          </div>
+
+          <div class="memory-grid" id="memory-grid">
+            <!-- 12 cards generated by JS -->
+          </div>
+
+          <div id="memory-win-modal" class="memory-win-modal hidden">
+            <div class="win-card-inner">
+              <span class="win-emoji">🎉🧸💖</span>
+              <h4 class="handwritten-style">You Found All The Pairs!</h4>
+              <p>You have the sharpest mind and the cutest smile, Nidhi!</p>
+              <button class="cute-pill-btn primary-pill" onclick="initMemoryGame()">🔄 Play Again</button>
+            </div>
+          </div>
+
+          <div class="game-actions-bar">
+            <button class="cute-pill-btn" onclick="initMemoryGame()">🔄 Shuffle & Restart</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 10. FIVE SECRET GIFT BOXES 🎀                             -->
+    <!-- ========================================================= -->
+    <section id="gifts-section" class="scrapbook-section gifts-section">
+      <div class="section-badge-wrapper">
+        <span class="cute-badge badge-purple">✨ Section 08 • Mystery Unboxing ✨</span>
+      </div>
+
+      <h2 class="section-title handwritten-style">
+        Five Secret Birthday Gift Boxes 🎀
+      </h2>
+
+      <p class="section-subtitle">
+        Every box holds a special secret just for you. Tap each box to unwrap it!
+      </p>
+
+      <div class="gifts-grid">
+        
+        <!-- Box 1: Sweet Message -->
+        <div class="gift-box-item" onclick="openGiftBox(1)" id="gift-box-1">
+          <div class="gift-box-visual box-pink">
+            <div class="gift-lid">
+              <div class="gift-bow">🎀</div>
+            </div>
+            <div class="gift-body">
+              <span class="gift-number">1</span>
+            </div>
+          </div>
+          <p class="gift-label">Box 1: A Sweet Love Note 🌸</p>
+        </div>
+
+        <!-- Box 2: Cute Sticker -->
+        <div class="gift-box-item" onclick="openGiftBox(2)" id="gift-box-2">
+          <div class="gift-box-visual box-lavender">
+            <div class="gift-lid">
+              <div class="gift-bow">🎀</div>
+            </div>
+            <div class="gift-body">
+              <span class="gift-number">2</span>
+            </div>
+          </div>
+          <p class="gift-label">Box 2: Collectible Sticker 🐱</p>
+        </div>
+
+        <!-- Box 3: Funny Message -->
+        <div class="gift-box-item" onclick="openGiftBox(3)" id="gift-box-3">
+          <div class="gift-box-visual box-mint">
+            <div class="gift-lid">
+              <div class="gift-bow">🎀</div>
+            </div>
+            <div class="gift-body">
+              <span class="gift-number">3</span>
+            </div>
+          </div>
+          <p class="gift-label">Box 3: A Little Laugh 😜</p>
+        </div>
+
+        <!-- Box 4: Hidden Surprise -->
+        <div class="gift-box-item" onclick="openGiftBox(4)" id="gift-box-4">
+          <div class="gift-box-visual box-peach">
+            <div class="gift-lid">
+              <div class="gift-bow">🎀</div>
+            </div>
+            <div class="gift-body">
+              <span class="gift-number">4</span>
+            </div>
+          </div>
+          <p class="gift-label">Box 4: Mystery Surprise 🎁</p>
+        </div>
+
+        <!-- Box 5: Special Final Wish -->
+        <div class="gift-box-item" onclick="openGiftBox(5)" id="gift-box-5">
+          <div class="gift-box-visual box-gold">
+            <div class="gift-lid">
+              <div class="gift-bow">🎀</div>
+            </div>
+            <div class="gift-body">
+              <span class="gift-number">5</span>
+            </div>
+          </div>
+          <p class="gift-label">Box 5: The Grand Blessing 👑</p>
+        </div>
+
+      </div>
+
+      <!-- Gift Popup Modal -->
+      <div id="gift-reveal-modal" class="gift-modal hidden" onclick="closeGiftModal()">
+        <div class="gift-modal-card" onclick="event.stopPropagation()">
+          <button class="modal-close-btn" onclick="closeGiftModal()">✖</button>
+          <div class="modal-gift-header">
+            <span id="modal-gift-icon" class="modal-icon">🎁</span>
+            <h3 id="modal-gift-title" class="handwritten-style">Surprise Unlocked!</h3>
+          </div>
+          <div id="modal-gift-content" class="modal-gift-body">
+            <!-- Content filled by JS -->
+          </div>
+          <button class="cute-pill-btn primary-pill" onclick="closeGiftModal()">Aww, Thank You! 💖</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 11. CUTE DOODLE REASONS WHY NIDHI IS SO SPECIAL ✨       -->
+    <!-- ========================================================= -->
+    <section class="scrapbook-section reasons-section">
+      <div class="section-badge-wrapper">
+        <span class="cute-badge badge-pink">✨ Just A Few Little Things ✨</span>
+      </div>
+
+      <h2 class="section-title handwritten-style">
+        A Few Reasons Why Nidhi is So Precious 🌸
+      </h2>
+
+      <p class="section-subtitle">
+        Tap any card to reveal why you make this world a hundred times better!
+      </p>
+
+      <div class="reasons-grid">
+        
+        <div class="reason-card" onclick="this.classList.toggle('flipped')">
+          <div class="reason-card-inner">
+            <div class="reason-front">
+              <span class="reason-icon">✨</span>
+              <h4>Reason 01</h4>
+              <p>Tap to read 💌</p>
+            </div>
+            <div class="reason-back">
+              <p>Your smile is pure magic. It can brighten up even the gloomiest day in a split second! ☀️</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-card" onclick="this.classList.toggle('flipped')">
+          <div class="reason-card-inner">
+            <div class="reason-front">
+              <span class="reason-icon">🌷</span>
+              <h4>Reason 02</h4>
+              <p>Tap to read 💌</p>
+            </div>
+            <div class="reason-back">
+              <p>You have the most tender, caring heart. The world needs a million more people like you! 💖</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-card" onclick="this.classList.toggle('flipped')">
+          <div class="reason-card-inner">
+            <div class="reason-front">
+              <span class="reason-icon">🐱</span>
+              <h4>Reason 03</h4>
+              <p>Tap to read 💌</p>
+            </div>
+            <div class="reason-back">
+              <p>Your silly little giggles and funny cute reactions make me fall in love all over again! 🐾</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-card" onclick="this.classList.toggle('flipped')">
+          <div class="reason-card-inner">
+            <div class="reason-front">
+              <span class="reason-icon">⭐</span>
+              <h4>Reason 04</h4>
+              <p>Tap to read 💌</p>
+            </div>
+            <div class="reason-back">
+              <p>Talking to you feels like coming home. You are my absolute favorite safe space! 🏡</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-card" onclick="this.classList.toggle('flipped')">
+          <div class="reason-card-inner">
+            <div class="reason-front">
+              <span class="reason-icon">🍰</span>
+              <h4>Reason 05</h4>
+              <p>Tap to read 💌</p>
+            </div>
+            <div class="reason-back">
+              <p>You make ordinary days feel like a celebration just by being in them! 🎂</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-card" onclick="this.classList.toggle('flipped')">
+          <div class="reason-card-inner">
+            <div class="reason-front">
+              <span class="reason-icon">🎀</span>
+              <h4>Reason 06</h4>
+              <p>Tap to read 💌</p>
+            </div>
+            <div class="reason-back">
+              <p>Simply because you are YOU, and there is no one else in the entire universe like you! 👑</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 12. FINAL BIRTHDAY SURPRISE & GRAND FINALE 🌙             -->
+    <!-- ========================================================= -->
+    <section id="finale-section" class="scrapbook-section finale-section">
+      
+      <div class="finale-scrapbook-card polaroid-shadow">
+        <div class="washi-tape top-center-tape"></div>
+
+        <div class="grand-artwork-frame">
+          <img src="assets/images/doodle-trio-celebration.jpg" alt="Happy Birthday Celebration Artwork" class="grand-art-img">
+        </div>
+
+        <h2 class="finale-title handwritten-style">
+          Happy Birthday Once Again, Nidhi! ❤️
+        </h2>
+
+        <p class="finale-blessing-text">
+          May your year ahead be as sweet as strawberries, as bright as stars, and filled with limitless joy, success, and love. Never forget how truly cherished and adored you are!
+        </p>
+
+        <div class="finale-celebration-buttons">
+          <button class="glowing-surprise-btn pulse-glow" onclick="launchGrandFireworks()">
+            <span>🎆 Launch Grand Celebration Fireworks! 💖</span>
+          </button>
+          
+          <button class="cute-pill-btn secondary-pill" onclick="replaySurpriseExperience()">
+            <span>Replay Your Surprise 💗</span>
+          </button>
+        </div>
+
+        <div class="footer-doodle-row">
+          <img src="assets/stickers/chubby-party.svg" alt="Party Doodle" class="footer-sticker float-gentle">
+          <img src="assets/stickers/cute-bow.svg" alt="Pink Bow" class="footer-sticker bounce-gentle">
+          <img src="assets/stickers/chubby-screaming-joy.svg" alt="Happy Doodle" class="footer-sticker float-gentle">
+        </div>
+
+        <div class="handmade-footer-text">
+          Handmade with ❤️ exclusively for Nidhi on her Birthday • Forever & Always ✨
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script src="script.js"></script>
+</body>
+</html>
